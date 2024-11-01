@@ -3,8 +3,8 @@ DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 CPU=1
 Passes=20
 FragmentSize=50
-Identity=98
-Coverage=98
+Identity=80
+Coverage=80
 input=""
 ref=""
 cut=50
@@ -62,8 +62,8 @@ while [[ "$#" -gt 0 ]]; do
             echo "  -cpu           Number of CPU cores to use (default: 1)"
             echo "  -passes        Min passes per molecule (default: 20)"
             echo "  -fragmentsize  Min fragment size threshold (default: 50)"
-            echo "  -identity      Identity threshold (default: 98)"
-            echo "  -coverage      Coverage threshold (default: 98)"
+            echo "  -identity      Identity threshold (default: 80)"
+            echo "  -coverage      Coverage threshold (default: 80)"
 	    echo "  -cut  	   Bases flanking molecules will be checked (default: 50)"
             echo "  -binnumber     The bases in the middle of molecules will be united into n bins (default: 50)"
             exit 0
