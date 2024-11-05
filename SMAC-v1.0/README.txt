@@ -1,6 +1,6 @@
 # SMAC: Single-Molecule 6mA Analysis Pipeline
 
-SMAC (Single-Molecule 6mA Analysis) is a comprehensive tool designed for the identification and analysis of DNA N6-methyladenine (6mA) at single-molecule resolution using SMRT Circular Consensus Sequencing (CCS) data. This pipeline includes a series of Perl scripts for data computation and Python scripts for data visualization, which are interconnected by six shell scripts named Step1-6.sh. Each script serves a specific purpose in the pipeline, guiding users from raw data processing to comprehensive analysis of 6mA methylation.
+SMAC (Single Molecule 6mA analysis of CCS reads) is a comprehensive tool designed for the identification and analysis of DNA N6-methyladenine (6mA) at single-molecule resolution using SMRT Circular Consensus Sequencing (CCS) data. This pipeline includes a series of Perl scripts for data computation and Python scripts for data visualization, which are interconnected by six shell scripts named Step1-6.sh. Each script serves a specific purpose in the pipeline, guiding users from raw data processing to comprehensive analysis of 6mA methylation.
 
 ## Getting Started
 
