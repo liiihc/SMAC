@@ -44,7 +44,7 @@ Step1.sh -input <input_bam> -name <project_prefix> -ref <reference_fasta> [-cpu 
 - Users can set the number of bases at both ends of the reads to be displayed in detail using the `-cut` parameter and set the number of bins for the central part of the reads using the `-binnumber` parameter. 
 - The results are saved in the `IPDr_Statistics_plot.pdf` file.
 
-### Step 2: Adapter Trimming and IPD Ratio Analysis
+### Step 2: Bases near adapter Trimming and IPD Ratio Analysis
 
 ```sh
 Step2.sh -name <project_prefix> [-cpu <cpu>] [-trimmer <trimmer>]
