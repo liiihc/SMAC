@@ -54,7 +54,7 @@ Step2.sh -name <project_prefix> [-cpu <cpu>] [-trimmer <trimmer>]
 - After trimming, all adenines are aligned back to the genome, and the IPD ratio values of adenines that are successfully aligned to the genome are calculated. A log2 transformation is performed, and a bimodal distribution curve is fitted to obtain the recommended cut-off value and false positive/negative rates.
 - The results are stored in the `A_IPDr_distribution/A` directory.
 
-### Step 3: 6mA Cut-off Analysis
+### Step 3: Obtaining IPD Ratio Cut-off for 6mA Detection
 
 ```sh
 Step3.sh -name <project_prefix> -ipd_cutoff <value> [-cpu <cpu>]
@@ -97,7 +97,7 @@ Step6.sh -name <project_prefix> -all_cutoff <value> -W_cutoff <value> -C_cutoff 
   
 ## Citation
 If you use SMAC in your research, please cite:
-> Haicheng et al., SMAC: Identifying DNA N6-methyladenine (6mA) at the single-molecule level using SMRT Circular Consensus Sequencing (CCS) data
+> Li et al., SMAC: Identifying DNA N6-methyladenine (6mA) at the single-molecule level using SMRT Circular Consensus Sequencing (CCS) data
 
 ## Contact
 For questions, please contact Haicheng at [liiihc0924@gmail.com].
