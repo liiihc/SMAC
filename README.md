@@ -54,7 +54,7 @@ Step2.sh -name <project_prefix> [-cpu <cpu>] [-trimmer <trimmer>]
 - After trimming, all adenines are aligned back to the genome, and the IPD ratio values of adenines that are successfully aligned to the genome are calculated. A log2 transformation is performed, and a bimodal distribution curve is fitted to obtain the recommended cut-off value and false positive/negative rates.
 - The results are stored in the `A_IPDr_distribution/A` directory.
 
-### Step 3: Obtain IPD Ratio Cut-off for 6mA Detection
+### Step 3: Obtaining IPD Ratio Cut-off for 6mA Detection
 
 ```sh
 Step3.sh -name <project_prefix> -ipd_cutoff <value> [-cpu <cpu>]
