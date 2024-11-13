@@ -93,6 +93,6 @@ perl $DIR/6mAratio.pl $output_dir ${name}_6mAratio.xls
 cat ${name}_shifted_cutoff/*6mAorA_inApT_doubleCutoff > ${name}_6mApTorApT
 perl $DIR/10-Penetrance.pl ${name}_6mApTorApT
 chmod u+x $DIR/bedGraphToBigWig
-awk '{print $1"\t"$2"\t"$2"\t"$6}' ${name}_6mApTorApT_penetrance | sort -k1,1 -k2,2n > ${name}_6mApTorApT.bedGraph
+awk '{print $1"\t"($2-1)"\t"($2-1)"\t"$6}' ${name}_6mApTorApT_penetrance | sort -k1,1 -k2,2n > ${name}_6mApTorApT.bedGraph
 samtools faidx $ref
 $DIR/bedGraphToBigWig ${name}_6mApTorApT.bedGraph ${ref}.fai ${name}_6mApTorApT.bw
