@@ -88,6 +88,11 @@ awk 'BEGIN{m6A=0; total=0} {total++; if($5=="6mA") m6A++} END{printf("6mA level 
 
 perl $DIR/10-Penetrance.pl "${name}_back2genome.txt_6mAorA"
 
+perl 6mAviewer.pl ${name}.sorted.hifi.mapped.sam ${name}_back2genome.txt_6mAorA $ref ${name}_single_molecules.sam
+samtools view -bS ${name}_single_molecules.sam -o ${name}_single_molecules.bam
+samtools sort -@ $CPU ${name}_single_molecules.bam -o ${name}_single_molecules_sorted.bam
+samtools index ${name}_single_molecules_sorted.bam
+
 chmod u+x $DIR/bedGraphToBigWig
 awk '{print $1"\t"$2"\t"$2"\t"$6}' ${name}_back2genome.txt_6mAorA_penetrance | sort -k1,1 -k2,2n > ${name}_6mAorA.bedGraph
 samtools faidx $ref
