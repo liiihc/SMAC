@@ -8,9 +8,9 @@ my $n = shift;
 return log($n)/log(2);
 }
 while (defined ($_=<IN1>)){
-	if ($_=~/^(\d+\s+.+?\s+\d+)\s+W\s+(.+?)\s+/){
+	if ($_=~/^(\d+\s+.+?\s+\d+)\s+W\s+(.+?)\s+AT/){
 		$W{$1}=$2}
-	if ($_=~/^(\d+\s+.+?\s+\d+)\s+C\s+(.+?)\s+/){
+	if ($_=~/^(\d+\s+.+?\s+\d+)\s+C\s+(.+?)\s+AT/){
                 $C{$1}=$2}}
 while (defined ($_=<IN2>)){
 	if ($_=~/^(\d+\s+.+?)\s+(\d+)\s+(.)\s+(.+?)\s+AT/ && $4>=$IPD){
