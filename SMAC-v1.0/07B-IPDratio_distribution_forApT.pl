@@ -1,6 +1,7 @@
 open (IN1,"<","$ARGV[0]");#1000    chr_029 2449    C       1.281   AN      AAAAAANNNNN
 open (IN2,"<","$ARGV[0]");
 $IPD="$ARGV[1]";
+$IPD=2**$IPD;
 open (OUT1,">","$ARGV[0]_Wstrand_IPDr_distribution");
 open (OUT2,">","$ARGV[0]_Cstrand_IPDr_distribution");
 sub log2 {
