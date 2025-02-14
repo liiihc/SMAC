@@ -72,7 +72,7 @@ Step4.sh -name <project_prefix> -ref <reference_fasta> -sd_cutoff [value] -ipd_c
 
 - Users manually set a threshold based on the SD value distribution and input it using the `-sd_cutoff` parameter to filter out single molecules with high background noise.
 - After filtering, the input IPD ratio cut-off is used to determine 6mA, and the percentage of 6mA/A in the sample is provided.
-- The identification results at the single-molecule level are stored in `back2genome.txt_6mAorA`. At the composite level, the penetrance of each adenine base is saved in `penetrance.xls`. A `.bw` format file is also provided, which can be imported into genome browsers (e.g., IGV) for viewing. The single_molecules_sorted.bam file can be loaded into genome browsers to visualize 6mA modifications at the single-molecule and single-base resolution.
+- The identification results at the single-molecule level are stored in `back2genome.txt_6mAorA`. At the composite level, the penetrance of each adenine base is saved in `penetrance.xls`. A `.bw` format file is also provided, which can be imported into genome browsers (e.g., IGV) for viewing.
 - In addition, motifs 5bp upstream and downstream of 6mA are given. The motif image is saved as `6mA_motif.pdf`, and the probability matrix is stored in `6mAorA_motif`.
 
 ### Step 5: Obtaining the Second Round of IPD Ratio Cut-off for 6mApT-Enriched Samples
@@ -94,6 +94,21 @@ Step6.sh -name <project_prefix> -all_cutoff <value> -W_cutoff <value> -C_cutoff 
 - The cut-off values for all adenines, Watson strand, and Crick strand are entered separately, and the script re-identifies 6mA based on the sequence context of each adenine and the methylation status of the opposing strand.
 - The single-molecule level identification results are stored in the `shifted_cutoff` folder, and detailed output information is saved in `6mAratio.xls`.
 - At the composite level, the penetrance information for all ApT sites is saved in `6mApTorApT_penetrance`, and the corresponding `.bw` file is also provided.
+
+### Visualizing 6mA Sites Using genome browsers
+To visualize 6mA sites in genome browsers, the following steps utilize the `6mAviewer.pl` script and samtools to generate a BAM file:
+```sh
+perl 6mAviewer.pl ${name}.sorted.hifi.mapped.sam [${name}_back2genome.txt_6mAorA| ${name}_back2genome.txt_6mApTorApT] reference_genome.fasta ${name}_single_molecules.sam 
+samtools view -bS ${name}_single_molecules.sam -o ${name}_single_molecules.bam
+samtools sort -@ $CPU ${name}_single_molecules.bam -o ${name}_single_molecules_sorted.bam
+samtools index ${name}_single_molecules_sorted.bam
+```
+Once these steps are completed, the resulting indexed BAM file (${name}_single_molecules_sorted.bam) can be loaded into genome browsers (e.g., IGV) to visualize 6mA modifications at the single-molecule and single-base resolution.
+
+
+![6mA viewer](https://github.com/user-attachments/assets/dafe8b67-26de-4c72-9350-5553daed07e9)
+##### Penetrance, coverage and identified 6mA sites calculated by SMAC, showcased in a representative genomic region from the native DNA sample in the IGV. In the single-molecule section, the gray bands represent the positions of single molecules, while 6mA on the Watson and Crick strands are marked in yellow and blue, respectively.
+
   
 ## Citation
 If you use SMAC in your research, please cite:
