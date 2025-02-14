@@ -52,7 +52,7 @@ Step2.sh -name <project_prefix> [-cpu <cpu>] [-trimmer <trimmer>]
 ```
 
 - The project name should be consistent with the name used in the previous step. Users can set how many bases should be trimmed from both ends of the reads based on the influence of adapters calculated in the previous step using the `-trimmer` parameter.
-- After trimming, all adenines are aligned back to the genome, and the IPD ratio values of adenines that are successfully aligned to the genome are calculated. A log2 transformation is performed, and a bimodal distribution curve is fitted to obtain the recommended cut-off value and false positive/negative rates.
+- Once the trimming is completed, all adenines are realigned to the genome, and the IPD ratio values that successfully align are used for following steps. After performing a log2 transformation, the bimodal distribution of the data is analyzed. A Gaussian distribution is specifically fitted to the right peak (using data with log2(IPDr) ≥ 1.6 by default) to determine the recommended cut-off value and calculate false positive/negative rates. Notably, the threshold of log2(IPDr) ≥ 1.6 was empirically optimized from our multiple samples to ensure the fitted Gaussian curve aligns well with the actual distribution of the right peak. Users can adjust this threshold by modifying the 6mA_axdistribution_rightpeak.py script if needed.
 - The results are stored in the `A_IPDr_distribution/A` directory.
 
 ### Step 3: Obtaining IPD Ratio Cut-off for 6mA Detection
