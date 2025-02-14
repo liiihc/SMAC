@@ -1,4 +1,4 @@
-# SMAC: Single-Molecule 6mA Analysis Pipeline
+![微信图片_20250214093902](https://github.com/user-attachments/assets/3308567f-2b71-4432-a7d9-c053d27ce9c1)# SMAC: Single-Molecule 6mA Analysis Pipeline
 
 SMAC (Single Molecule 6mA analysis of CCS reads) is a comprehensive tool designed for the identification and analysis of DNA N6-methyladenine (6mA) at single-molecule resolution using SMRT Circular Consensus Sequencing (CCS) data. This pipeline includes a series of Perl scripts for data computation and Python scripts for data visualization, which are interconnected by six shell scripts named Step1-6.sh. Each script serves a specific purpose in the pipeline, guiding users from raw data processing to comprehensive analysis of 6mA methylation.
 
@@ -96,7 +96,7 @@ Step6.sh -name <project_prefix> -all_cutoff <value> -W_cutoff <value> -C_cutoff 
 - At the composite level, the penetrance information for all ApT sites is saved in `6mApTorApT_penetrance`, and the corresponding `.bw` file is also provided.
 
 ### Visualizing 6mA Sites Using genome browsers
-To visualize 6mA sites in IGV, the following steps utilize the `6mAviewer.pl` script and samtools to generate a BAM file:
+To visualize 6mA sites in genome browsers, the following steps utilize the `6mAviewer.pl` script and samtools to generate a BAM file:
 ```sh
 perl 6mAviewer.pl ${name}.sorted.hifi.mapped.sam [${name}_back2genome.txt_6mAorA| ${name}_back2genome.txt_6mApTorApT] reference_genome.fasta ${name}_single_molecules.sam 
 samtools view -bS ${name}_single_molecules.sam -o ${name}_single_molecules.bam
@@ -104,6 +104,11 @@ samtools sort -@ $CPU ${name}_single_molecules.bam -o ${name}_single_molecules_s
 samtools index ${name}_single_molecules_sorted.bam
 ```
 Once these steps are completed, the resulting indexed BAM file (${name}_single_molecules_sorted.bam) can be loaded into genome browsers (e.g., IGV) to visualize 6mA modifications at the single-molecule and single-base resolution.
+
+Penetrance, coverage and identified 6mA sites calculated by SMAC, showcased in a representative genomic region from the native DNA sample in the IGV. In the single-molecule section, the gray bands represent the positions of single molecules, while 6mA on the Watson and Crick strands are marked in yellow and blue, respectively.
+![6mA viewer](https://github.com/user-attachments/assets/dafe8b67-26de-4c72-9350-5553daed07e9)
+
+
 
 
 ## Citation
