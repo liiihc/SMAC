@@ -104,7 +104,7 @@ samtools view -bS ${name}_single_molecules.sam -o ${name}_single_molecules.bam
 samtools sort -@ $CPU ${name}_single_molecules.bam -o ${name}_single_molecules_sorted.bam
 samtools index ${name}_single_molecules_sorted.bam
 ```
-Once these steps are completed, the resulting indexed BAM file (${name}_single_molecules_sorted.bam) can be loaded into genome browsers (e.g., IGV) to visualize 6mA modifications at the single-molecule and single-base resolution.
+Once these steps are completed, the resulting indexed BAM file (${name}_single_molecules_sorted.bam) can be loaded into genome browsers (e.g., IGV, https://igv.org) to visualize 6mA modifications at the single-molecule and single-base resolution.
 
 
 ![6mA viewer](https://github.com/user-attachments/assets/dafe8b67-26de-4c72-9350-5553daed07e9)
