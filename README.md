@@ -105,9 +105,8 @@ samtools index ${name}_single_molecules_sorted.bam
 ```
 Once these steps are completed, the resulting indexed BAM file (${name}_single_molecules_sorted.bam) can be loaded into genome browsers (e.g., IGV) to visualize 6mA modifications at the single-molecule and single-base resolution.
 
-Penetrance, coverage and identified 6mA sites calculated by SMAC, showcased in a representative genomic region from the native DNA sample in the IGV. In the single-molecule section, the gray bands represent the positions of single molecules, while 6mA on the Watson and Crick strands are marked in yellow and blue, respectively.
 ![6mA viewer](https://github.com/user-attachments/assets/dafe8b67-26de-4c72-9350-5553daed07e9)
-
+# Penetrance, coverage and identified 6mA sites calculated by SMAC, showcased in a representative genomic region from the native DNA sample in the IGV. In the single-molecule section, the gray bands represent the positions of single molecules, while 6mA on the Watson and Crick strands are marked in yellow and blue, respectively.
 
 
 
