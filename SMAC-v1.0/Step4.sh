@@ -89,7 +89,7 @@ awk 'BEGIN{m6A=0; total=0} {total++; if($5=="6mA") m6A++} END{printf("6mA level 
 perl $DIR/10-Penetrance.pl "${name}_back2genome.txt_6mAorA"
 
 chmod u+x $DIR/bedGraphToBigWig
-awk '{print $1"\t"$2"\t"$2"\t"$6}' ${name}_back2genome.txt_6mAorA_penetrance | sort -k1,1 -k2,2n > ${name}_6mAorA.bedGraph
+awk '{print $1"\t"($2-1)"\t"($2-1)"\t"$6}' ${name}_back2genome.txt_6mAorA_penetrance | sort -k1,1 -k2,2n > ${name}_6mAorA.bedGraph
 samtools faidx $ref
 $DIR/bedGraphToBigWig ${name}_6mAorA.bedGraph ${ref}.fai ${name}_6mAorA.bw
 
