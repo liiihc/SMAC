@@ -19,8 +19,8 @@ while (defined ($sam=<IN1>)){
 		$pos=$pos-1;
 		$start{$zmw}=$start;
 		$length{$zmw}=$pos-$start+1;
-		$sam{$zmw}=1;}
-#		system "echo '>$zmw' >> tmp.file; samtools faidx $fa $chr{$zmw}:$start-$pos |grep -v '>' >> tmp.file"}
+		$sam{$zmw}=1;
+		system "echo '>$zmw' >> tmp.file; samtools faidx $fa $chr{$zmw}:$start-$pos |grep -v '>' >> tmp.file"}
 	elsif($sam=~/^@/) {$header.=$sam}}}
 print OUT1 "$header";
 open (IN3,"<","tmp.file");
