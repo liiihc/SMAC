@@ -112,7 +112,7 @@ Once these steps are completed, the resulting indexed BAM file (${name}_single_m
   
 ## Citation
 If you use SMAC in your research, please cite:
-> Li et al., SMAC: Identifying DNA N6-methyladenine (6mA) at the single-molecule level using SMRT Circular Consensus Sequencing (CCS) data
+> Haicheng Li, Junhua Niu, Yalan Sheng, Yifan Liu, Shan Gao, SMAC: identifying DNA N6-methyladenine (6mA) at the single-molecule level using SMRT CCS data, Briefings in Bioinformatics, Volume 26, Issue 2, March 2025, bbaf153, https://doi.org/10.1093/bib/bbaf153
 
 ## Contact
 For questions, please contact Haicheng at [liiihc0924@gmail.com].
