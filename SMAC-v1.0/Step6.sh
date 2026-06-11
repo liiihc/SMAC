@@ -85,7 +85,7 @@ output_dir="${name}_shifted_cutoff"
 mkdir -p "$output_dir"
 for num in $(seq 1 "$CPU"); do
     input_file="${name}_back2genome/${num}.txt"
-    perl $DIR/09B-6mApT_features.pl "$input_file" "$output_dir" "$all_cutoff" "$W_cutoff" "$C_cutoff" "$num" &
+    perl $DIR/09B-6mApT_features.pl "$input_file" "$output_dir" "$all_cutoff" "$all_cutoff" "$W_cutoff" "$C_cutoff" "$num" &
 done
 wait
 perl $DIR/6mAratio.pl $output_dir ${name}_6mAratio.xls
